@@ -1,8 +1,13 @@
 
-<h1>Роуты</h1>
-<a class="link" href="/mem">Память</a>
-<a class="link" href="/proc">Процессор</a>
-<a class="link" href="/proc-grep">Процессор (| grep model)</a>
-<a class="link" href="/ls">Список папок и файлов</a>
-<a class="link" href="/hdd">Загрузка диска</a>
+<h1><%= message %></h1>
+<a class="link" href="/system/mem">Память</a>
+<a class="link" href="/system/proc">Процессор</a>
+<a class="link" href="/system/ls">Список папок и файлов</a>
+<a class="link" href="/system/hdd">Загрузка диска</a>
 <a class="link" href="/reboot">Ребут компа (linux)</a>
+<hr>
+<div>
+  <% all.each do |linux| %>
+  <div><%= linux['name'] %> - <%= linux['count'] %></div>
+  <% end %>
+</div>
